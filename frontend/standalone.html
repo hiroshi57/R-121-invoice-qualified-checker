@@ -772,7 +772,9 @@ function App() {
   const v = a.missing.length > 0 ? ["vbad", "🛑 適格請求書の要件を満たしていません（不足" + a.missing.length + "件）", "このままでは、受け取った側が仕入税額控除を受けられない恐れがあります。不足している項目を追記してください。"] : a.tnum.found && !a.tnum.valid ? ["vmid", "⚠ 登録番号の数字が正しくない可能性があります", "必要な項目はそろっていますが、登録番号の検査用数字が一致しません。番号の写し間違いをご確認ください。"] : a.calcIssues.length > 0 ? ["vmid", "⚠ 消費税額の計算が合いません", "記載事項はそろっていますが、金額の整合が取れていません。下の指摘をご確認ください。"] : ["vgood", "✅ 必要な記載事項はそろっています", "機械的な点検では問題は見つかりませんでした。ただし最終確認は必ず人が行ってください。"];
   return /*#__PURE__*/React.createElement("div", {
     className: "wrap"
-  }, /*#__PURE__*/React.createElement(DataBar, null), /*#__PURE__*/React.createElement("h1", null, "\u9069\u683C\u8ACB\u6C42\u66F8\uFF08\u30A4\u30F3\u30DC\u30A4\u30B9\uFF09\u30C1\u30A7\u30C3\u30AF"), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement(DataBar, null), /*#__PURE__*/React.createElement("h1", null, "\u9069\u683C\u8ACB\u6C42\u66F8\uFF08\u30A4\u30F3\u30DC\u30A4\u30B9\uFF09\u30C1\u30A7\u30C3\u30AF"), !pro && /*#__PURE__*/React.createElement("p", {
+    style: { fontSize: 12.5, color: "#6b7280", margin: "0 0 12px" }
+  }, "\uD83C\uDD93 \u767B\u9332\u4E0D\u8981\u30FB", window.zenFreeLimit ? window.zenFreeLimit() : 3, "\u56DE\u307E\u3067\u7121\u6599\u3067\u304A\u8A66\u3057\u3044\u305F\u3060\u3051\u307E\u3059"), /*#__PURE__*/React.createElement("div", {
     className: "sub",
     style: {
       marginBottom: 10
